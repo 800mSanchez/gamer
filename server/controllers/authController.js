@@ -8,8 +8,7 @@ module.exports = {
         if(!user[0]){
             return res.status(401).send('Incorrect credentials');
         } else {
-            const authenticated = bcrypt.compareSync
-            (password, user[0].password);
+            const authenticated = bcrypt.compareSync(password, user[0].password);
             if (authenticated){
                 req.session.user = {
                     userId: user[0].user_id,
